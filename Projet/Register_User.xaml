@@ -1,0 +1,89 @@
+﻿<Window x:Class="Projet.Register_User"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Projet"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+     TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+     TextElement.FontWeight="Regular"
+     TextElement.FontSize="13"
+     TextOptions.TextFormattingMode="Ideal"
+     TextOptions.TextRenderingMode="Auto"
+     Background="{DynamicResource MaterialDesignPaper}"
+     FontFamily="{DynamicResource MaterialDesignFont}"
+        Title="Register_User" Height="500" Width="400" AllowsTransparency="True" WindowStyle="None">
+    <ScrollViewer >
+        <Grid Height="700" Width="400">
+            <TextBox
+  x:Name="labelNom"
+  materialDesign:TextFieldAssist.HasClearButton="True"
+  materialDesign:HintAssist.Hint="Nom"
+  materialDesign:HintAssist.HelperText="" Margin="76,115,112,536">
+                <TextBox.Text>
+                    <Binding
+      Path="Name"
+      UpdateSourceTrigger="PropertyChanged">
+                    </Binding>
+                </TextBox.Text>
+            </TextBox>
+            <Label Content="Inscription" HorizontalAlignment="Left" Margin="124,40,0,0" VerticalAlignment="Top" FontSize="25" FontWeight="Bold" Height="42" Width="138"/>
+            <PasswordBox
+  x:Name="mdp"
+  materialDesign:TextFieldAssist.HasClearButton="True"
+  materialDesign:HintAssist.Hint="Mot de passe"
+  materialDesign:HintAssist.Foreground="Green"
+  materialDesign:TextFieldAssist.UnderlineBrush="Green"
+  Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" Margin="76,194,112,457" />
+            <PasswordBox
+  x:Name="mdpConfirmer"
+  materialDesign:TextFieldAssist.HasClearButton="True"
+  materialDesign:HintAssist.Hint="Confirmer mot de passe"
+  materialDesign:HintAssist.Foreground="Green"
+  materialDesign:TextFieldAssist.UnderlineBrush="Green"
+  Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" Margin="76,276,113,373" />
+            <Label Content="Questions de sécurité en cas d'oubli de mot de passe" HorizontalAlignment="Left" Margin="24,393,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" Width="354" Height="39"/>
+            <TextBox
+  x:Name="question1"
+  materialDesign:TextFieldAssist.HasClearButton="True"
+  materialDesign:HintAssist.Hint="Quel est le lieu de naissance de votre père ?"
+  materialDesign:HintAssist.HelperText="" Margin="76,468,40,180">
+                <TextBox.Text>
+                    <Binding
+      Path="Name"
+      UpdateSourceTrigger="PropertyChanged">
+                    </Binding>
+                </TextBox.Text>
+            </TextBox>
+            <TextBox
+  x:Name="question2"
+  materialDesign:TextFieldAssist.HasClearButton="True"
+  materialDesign:HintAssist.Hint="Quelle est votre couleur favorite ?"
+  materialDesign:HintAssist.HelperText="" Margin="76,556,40,92">
+                <TextBox.Text>
+                    <Binding
+      Path="Name"
+      UpdateSourceTrigger="PropertyChanged">
+                    </Binding>
+                </TextBox.Text>
+            </TextBox>
+            <Button
+  Style="{StaticResource MaterialDesignRaisedDarkButton}"
+  ToolTip="Valider"
+  Content="OK" Margin="135,628,154,37" Click="OK_Click" Height="Auto" Background="#DDCCD340" BorderBrush="{x:Null}" Foreground="White" />
+            <Button
+  Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}"
+  ToolTip="Page précédente" Margin="10,0,343,654" Click="GoBack_Click" Height="Auto" Width="Auto" Background="{x:Null}" Foreground="#DD000000" BorderBrush="#FFD5D4D9">
+                <materialDesign:PackIcon
+    Kind="ArrowBack" />
+            </Button>
+            <Button
+  Style="{StaticResource MaterialDesignFloatingActionButton}"
+  ToolTip="Inscription" Margin="283,40,78,622" Height="Auto" Width="Auto" RenderTransformOrigin="5.065,0.812" FontSize="13" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#DD292222">
+                <materialDesign:PackIcon
+    Kind="AccountPlus" Height="24" Width="22" />
+            </Button>
+        </Grid>
+    </ScrollViewer>
+</Window>

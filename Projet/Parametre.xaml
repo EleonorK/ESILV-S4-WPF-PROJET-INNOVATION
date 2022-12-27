@@ -1,0 +1,70 @@
+﻿<Window x:Class="Projet.Parametre"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Projet"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+     TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+     TextElement.FontWeight="Regular"
+     TextElement.FontSize="13"
+     TextOptions.TextFormattingMode="Ideal"
+     TextOptions.TextRenderingMode="Auto"
+     Background="{DynamicResource MaterialDesignPaper}"
+     FontFamily="{DynamicResource MaterialDesignFont}"
+        Title="Parametre" Height="500" Width="400" Visibility="Visible" AllowsTransparency="True" WindowStyle="None">
+    <Grid>
+        <Label Content="Changer mon nom d'utilisateur" HorizontalAlignment="Left" Margin="62,100,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold"/>
+        <TextBox
+  x:Name="oldName"
+  materialDesign:TextFieldAssist.HasClearButton="True"          
+  materialDesign:HintAssist.Hint= "Ancien nom"
+  materialDesign:HintAssist.HelperText="" Margin="62,158,56,285">
+            <TextBox.Text>
+
+                <Binding
+      Path="Name"
+      UpdateSourceTrigger="PropertyChanged">
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+        <TextBox
+  x:Name="newName"
+  materialDesign:TextFieldAssist.HasClearButton="True"          
+  materialDesign:HintAssist.Hint="Nouveau nom"
+  materialDesign:HintAssist.HelperText="" Margin="62,253,56,196">
+            <TextBox.Text>
+                <Binding
+      Path="Name"
+      UpdateSourceTrigger="PropertyChanged">
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+        <Button
+  Style="{StaticResource MaterialDesignFlatDarkBgButton}"
+  ToolTip="Valider"
+  Content="OK" Margin="132,351,140,113" Click="ChangeName_Click" Height="Auto" />
+        <Grid>
+            <Button
+    Style="{StaticResource MaterialDesignRaisedDarkButton}"
+    materialDesign:ButtonAssist.CornerRadius="25"
+    ToolTip="Réinitialiser mon mot de passe" Margin="80,415,81,43" Background="{x:Null}" Foreground="#DD930E0E" BorderBrush="#FFA2D9F1" Click="ChangePassword_Click" Height="Auto">
+                <TextBlock
+      Text="Changer mon mot de passe" Foreground="#DD0096FF" />
+            </Button>
+            <Button
+                Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}"
+                ToolTip="Page précédente" Margin="20,30,336,424" Background="White" BorderBrush="#FFF6E1E1" Foreground="#DD000000" Click="GoBack_Click" Height="Auto" Width="Auto">
+                <materialDesign:PackIcon
+                    Kind="ArrowBack" Height="30" Width="22"/>
+            </Button>
+            <Button
+                Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}"
+                ToolTip="Déconnexion" Margin="331,30,25,424" Background="White" BorderBrush="#FFF6E1E1" Foreground="#DD000000" Click="Deconnexion_Click" Height="Auto" Width="Auto" RenderTransformOrigin="0.188,0.54">
+                <materialDesign:PackIcon
+                    Kind="AccountOff" Height="30" Width="22"/>
+            </Button>
+        </Grid>
+    </Grid>
+</Window>
